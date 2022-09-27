@@ -1,11 +1,18 @@
-import { Session } from "next-auth"
-import { JWT } from "next-auth/jwt"
+import { DefaultSession, Session } from "next-auth";
+import { JWT } from "next-auth/jwt";
 
 /** Example on how to extend the built-in session types */
 declare module "next-auth" {
   interface Session {
     /** This is an example. You can find me in types/next-auth.d.ts */
-    foo: string
+    user: {
+      name: string;
+      email: string;
+      image: string;
+    }& DefaultSession["user"];
+    name: string;
+    email: string;
+    image: string;
   }
 }
 
@@ -13,6 +20,7 @@ declare module "next-auth" {
 declare module "next-auth/jwt" {
   interface JWT {
     /** This is an example. You can find me in types/next-auth.d.ts */
-    bar: number
+    idToken?:string
+    bar: number;
   }
 }
