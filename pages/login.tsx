@@ -14,7 +14,7 @@ export default function Login() {
   } else {
     return (
       <div>
-        <h4>You're not signIn</h4>
+        <h4>You are not signIn</h4>
         <button className="text-lg" onClick={() => signIn()}>
           Signin
         </button>
