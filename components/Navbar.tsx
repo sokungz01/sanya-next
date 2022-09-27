@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { useEffect, useState, useRef } from "react";
 
@@ -89,12 +90,18 @@ export default function Navbar() {
                 </a>
               </li>
               <li className="mt-4 lg:mt-0">
-                <a
+                <Link
+                  href="/login"
+                  className="py-3 px-4 text-center border text-gray-600 hover:text-indigo-600 rounded-md block lg:inline lg:border-0"
+                >
+                  <a>Login</a>
+                </Link>
+                {/* <a
                   href="/login"
                   className="py-3 px-4 text-center border text-gray-600 hover:text-indigo-600 rounded-md block lg:inline lg:border-0"
                 >
                   Login
-                </a>
+                </a> */}
               </li>
               <li className="mt-8 lg:mt-0">
                 <a
@@ -111,7 +118,7 @@ export default function Navbar() {
               {navigation.map((item, idx) => {
                 return (
                   <li key={idx} className="text-gray-600 hover:text-indigo-600">
-                    <a href={item.path}>{item.title}</a>
+                    {/* <a href={item.path}>{item.title}</a> */}
                   </li>
                 );
               })}

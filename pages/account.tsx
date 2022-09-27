@@ -1,7 +1,7 @@
 import React from "react";
 import { useSession, signIn, signOut, getSession } from "next-auth/react";
 
-export default function account() {
+export default function Account() {
   const { data: session, status } = useSession({ required: true });
   const loading = status === "loading";
   if (status == "authenticated") {
