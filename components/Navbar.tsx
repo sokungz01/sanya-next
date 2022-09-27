@@ -23,16 +23,9 @@ export default function Navbar() {
     if (state) body.classList.add(...customBodyStyle);
     // Enable scrolling
     else body.classList.remove(...customBodyStyle);
-
-    // Sticky strick
-    const customStyle = ["sticky-nav", "fixed", "border-b"];
-    window.onscroll = () => {
-      if (window.scrollY > 80) navRef.current.classList.add(...customStyle);
-      else navRef.current.classList.remove(...customStyle);
-    };
   }, [state]);
   return (
-    <nav ref={navRef} className="bg-white w-full top-0 z-20">
+    <nav className="bg-white w-full top-0 z-20">
       <div className="items-center px-4 max-w-screen-xl mx-auto lg:flex lg:px-8">
         <div className="flex items-center justify-between py-3 lg:py-4 lg:block">
           <a href="javascript:void(0)">
