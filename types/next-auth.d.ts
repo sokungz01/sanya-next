@@ -9,10 +9,7 @@ declare module "next-auth" {
       name: string;
       email: string;
       image: string;
-    }& DefaultSession["user"];
-    name: string;
-    email: string;
-    image: string;
+    } & DefaultSession["user"];
   }
 }
 
@@ -20,7 +17,7 @@ declare module "next-auth" {
 declare module "next-auth/jwt" {
   interface JWT {
     /** This is an example. You can find me in types/next-auth.d.ts */
-    idToken?:string
+    idToken?: string;
     bar: number;
   }
 }

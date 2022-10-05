@@ -9,6 +9,7 @@ export default function Account() {
       <div>
         <h1>Hello, Welcome &quot;{session.user?.name}&quot;</h1>
         <h3>Email : {session.user?.email}</h3>
+        <h4>{JSON.stringify(session)}</h4>
         <img src={session.user?.image} alt="" /> <br />
         <button onClick={() => signOut()}>signOut</button>
       </div>
