@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useEffect } from "react";
 
 function TabBar({
   active,
@@ -19,7 +19,7 @@ function TabBar({
             onClick={() => setActive(tab)}
             className={
               active == tab
-                ? "inline-block py-3 px-4 text-white bg-blue-600 rounded-full active"
+                ? "inline-block py-3 px-4 text-white bg-topbar rounded-full active"
                 : "inline-block py-3 px-4 text-grey  rounded-full hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
             }
           >
