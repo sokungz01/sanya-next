@@ -11,6 +11,9 @@ module.exports = {
         main: "#366A82",
         sub: "#51859D",
       },
+      fontFamily: {
+        body: ["Mitr"],
+      },
     },
   },
   plugins: [],

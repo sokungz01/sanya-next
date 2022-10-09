@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
+import Image from "next/image";
 import React from "react";
 import { useEffect, useState, useRef } from "react";
+import sanyaLogo from "../public/asset/svg/sanyaLogo.svg";
 
 export default function Navbar({ route }: { route: string }) {
   const [state, setState] = useState(false);
@@ -26,17 +27,12 @@ export default function Navbar({ route }: { route: string }) {
     else body.classList.remove(...customBodyStyle);
   }, [state]);
   return (
-    <nav className="bg-white w-full top-0 z-20">
+    <nav className="bg-topbar w-full top-0 z-20">
       <div className="items-center px-4 max-w-screen-xl mx-auto lg:flex lg:px-8">
         <div className="flex items-center justify-between py-3 lg:py-4 lg:block">
           <Link href={"/"}>
             <a>
-              <img
-                src="https://www.floatui.com/logo.svg"
-                width={120}
-                height={50}
-                alt="Float UI logo"
-              />
+              <Image src={sanyaLogo} alt="mitr sanya" width={150} height={60} />
             </a>
           </Link>
           <div className="lg:hidden">
@@ -81,20 +77,22 @@ export default function Navbar({ route }: { route: string }) {
             state ? "h-screen pb-20 overflow-auto pr-4" : "hidden"
           }`}
         >
-          <div>
+          <div className="float-right">
             <ul className="flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row">
               <li className="mt-4 lg:mt-0">
                 <Link
                   href="/login"
-                  className="py-3 px-4 text-center border text-gray-600  rounded-md block lg:inline lg:border-0"
+                  // className="py-3 px-4 text-center borde rounded-md block lg:inline lg:border-0"
                 >
-                  <a className="text-gray-600">เข้าสู่ระบบ</a>
+                  <a className="py-3 px-4 text-center borde rounded-md block lg:inline lg:border-0 text-white">
+                    เข้าสู่ระบบ
+                  </a>
                 </Link>
               </li>
               <li className="mt-8 lg:mt-0">
                 <a
                   href="#"
-                  className="py-3 px-4 text-center text-white bg-topbar hover:text-white rounded-full shadow block lg:inline"
+                  className="py-3 px-4 text-center text-white bg-main hover:text-white rounded-full shadow block lg:inline"
                 >
                   ลงทะเบียน
                 </a>
@@ -105,15 +103,15 @@ export default function Navbar({ route }: { route: string }) {
             <ul className="justify-center items-center space-y-8 lg:flex lg:space-x-10 lg:space-y-0">
               {navigation.map((item, idx) => {
                 return (
-                  <li key={idx} className="text-gray-600 ">
+                  <li key={idx} className="text-white font-bold">
                     <Link href={`${item.path}`}>
                       {/* <a>{item.title}</a> */}
                       {/* <a>{item.title}</a> */}
                       <a
                         className={
                           route.includes(item.path)
-                            ? " py-3 px-4 text-white bg-topbar rounded-full active"
-                            : " py-3 px-4 text-grey  rounded-full hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+                            ? " py-3 px-3 text-black bg-white rounded-full active"
+                            : " py-3 px-3 rounded-full hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
                         }
                       >
                         {item.title}

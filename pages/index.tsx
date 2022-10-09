@@ -1,8 +1,12 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import Input from "../components/input";
-import styles from "../styles/Home.module.css";
-
+import pen from "../public/asset/image/pen.png";
+import lawyer from "../public/asset/image/lawyer.png";
+import icon1 from "../public/asset/image/icon-sm-1.png";
+import icon2 from "../public/asset/image/icon-sm-2.png";
+import icon3 from "../public/asset/image/icon-sm-3.png";
+import Link from "next/link";
 const Home: NextPage = () => {
   return (
     <div className="px-10 mt-20 sm:px-10 lg:px-36">
@@ -30,80 +34,84 @@ const Home: NextPage = () => {
       </div>
 
       <hr className="mx-auto my-10  h-px" />
-      <div className="pt-6 grid grid-cols-3 gap-1 justify-evenly">
-        <div className="w-96 h-80">
-          <div className="pl-36">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Eo_circle_cyan_blank.svg/2048px-Eo_circle_cyan_blank.svg.png"
-              className=" h-20 w-22 pl-2"
-            />
+      {/* 3 Service */}
+      <div className="pt-6 flex  gap-1 justify-between">
+        <div>
+          <div className="flex flex-wrap justify-center">
+            <div className="flex justify-center">
+              <div className="">
+                <Image src={icon1} alt="icon1" width={100} height={100} />
+              </div>
+            </div>
           </div>
-          <h1 className="text-center text-xl font-bold text-cyan-800">
-            บริการด้านกฎหมาย
-          </h1>
-          <p className="text-center text-sm pt-4">
-            LOREM IPSUM คือ เนื้อหาจำลองแบบเรียบๆ
-          </p>
-          <p className="text-center text-sm pt-2">
-            ที่ใช้กันในธุรกิจงานพิมพ์หรืองานเรียงพิมพ์มันได้กลาย
-          </p>
-          <p className="text-center text-sm pt-2">
-            มาเป็นเนื้อหาจำลองมาตรฐานของธุรกิจดังกล่าวมาตัง
-          </p>
-          <div className="pl-2">
-            <button className="pl-40 text-sm pt-6 font-bold text-cyan-800">
-              ดูวิธีใช้
-            </button>
+          <div className="text-center mt-2">
+            <h3 className="text-xl text-main font-bold ">บริการด้านกฎหมาย</h3>
           </div>
-        </div>
-        <div className="w-96 h-80">
-          <div className="pl-36">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Eo_circle_cyan_blank.svg/2048px-Eo_circle_cyan_blank.svg.png"
-              className=" h-20 w-22 pl-2"
-            />
-          </div>
-          <h1 className="text-center text-xl font-bold text-cyan-800">
-            บริการด้านกฎหมาย
-          </h1>
-          <p className="text-center text-sm pt-4">
-            LOREM IPSUM คือ เนื้อหาจำลองแบบเรียบๆ
-          </p>
-          <p className="text-center text-sm pt-2">
-            ที่ใช้กันในธุรกิจงานพิมพ์หรืองานเรียงพิมพ์มันได้กลาย
-          </p>
-          <p className="text-center text-sm pt-2">
-            มาเป็นเนื้อหาจำลองมาตรฐานของธุรกิจดังกล่าวมาตัง
-          </p>
-          <div className="pl-2">
-            <button className="pl-40 text-sm pt-6 font-bold text-cyan-800">
-              ดูวิธีใช้
-            </button>
+          <div className="mt-1 py-2 text-center">
+            <div className="flex flex-wrap justify-center">
+              <div className="w-full px-4">
+                <p className="font-light leading-relaxed text-slate-600 mb-4">
+                  An artist of considerable range, Mike is the name taken by
+                  Melbourne-raised, Brooklyn-based Nick Murphy writes, performs
+                  and records all of his own music, giving it a warm.
+                </p>
+                <Link href={"#"}>
+                  <a className="text-main text-sm font-bold">ดูวิธีใช้</a>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="w-96 h-80">
-          <div className="pl-36">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Eo_circle_cyan_blank.svg/2048px-Eo_circle_cyan_blank.svg.png"
-              className=" h-20 w-22 pl-2"
-            />
+        <div>
+          <div className="flex flex-wrap justify-center">
+            <div className="flex justify-center">
+              <div className="">
+                <Image src={icon2} alt="icon1" width={100} height={100} />
+              </div>
+            </div>
           </div>
-          <h1 className="text-center text-xl font-bold text-cyan-800">
-            บริการด้านกฎหมาย
-          </h1>
-          <p className="text-center text-sm pt-4">
-            LOREM IPSUM คือ เนื้อหาจำลองแบบเรียบๆ
-          </p>
-          <p className="text-center text-sm pt-2">
-            ที่ใช้กันในธุรกิจงานพิมพ์หรืองานเรียงพิมพ์มันได้กลาย
-          </p>
-          <p className="text-center text-sm pt-2">
-            มาเป็นเนื้อหาจำลองมาตรฐานของธุรกิจดังกล่าวมาตัง
-          </p>
-          <div className="pl-2">
-            <button className="pl-40 text-sm pt-6 font-bold text-cyan-800">
-              ดูวิธีใช้
-            </button>
+          <div className="text-center mt-2">
+            <h3 className="text-xl text-main font-bold ">บริการด้านกฎหมาย</h3>
+          </div>
+          <div className="mt-1 py-2 text-center">
+            <div className="flex flex-wrap justify-center">
+              <div className="w-full px-4">
+                <p className="font-light leading-relaxed text-slate-600 mb-4">
+                  An artist of considerable range, Mike is the name taken by
+                  Melbourne-raised, Brooklyn-based Nick Murphy writes, performs
+                  and records all of his own music, giving it a warm.
+                </p>
+                <Link href={"#"}>
+                  <a className="text-main text-sm font-bold">ดูวิธีใช้</a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="flex flex-wrap justify-center">
+            <div className="flex justify-center">
+              <div className="">
+                <Image src={icon3} alt="icon1" width={100} height={100} />
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-2">
+            <h3 className="text-xl text-main font-bold ">บริการด้านกฎหมาย</h3>
+          </div>
+          <div className="mt-1 py-2 text-center">
+            <div className="flex flex-wrap justify-center">
+              <div className="w-full px-4">
+                <p className="font-light leading-relaxed text-slate-600 mb-4">
+                  An artist of considerable range, Mike is the name taken by
+                  Melbourne-raised, Brooklyn-based Nick Murphy writes, performs
+                  and records all of his own music, giving it a warm.
+                </p>
+                <Link href={"#"}>
+                  <a className="text-main text-sm font-bold">ดูวิธีใช้</a>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
