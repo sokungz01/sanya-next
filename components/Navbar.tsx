@@ -1,21 +1,21 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { useEffect, useState, useRef } from "react";
 
-export default function Navbar() {
+export default function Navbar({ route }: { route: string }) {
   const [state, setState] = useState(false);
   const navRef = useRef();
 
   // Replace # path with your path
   const navigation = [
-    { title: "หน้าแรก", path: "/customer" },
-    { title: "บริการ" },
-    { title: "ชุมชน" },
-    { title: "ช่วยเหลือ" },
-    { title: "ติดต่อเรา" },
-    { title: "เกี่ยวกับเรา" },
+    { title: "หน้าแรก", path: "/home" },
+    { title: "บริการ", path: "/service" },
+    { title: "ชุมชน", path: "/community" },
+    { title: "ช่วยเหลือ", path: "/help" },
+    { title: "ติดต่อเรา", path: "/contact-us" },
+    { title: "เกี่ยวกับเรา", path: "/about-us" },
   ];
-
   useEffect(() => {
     const body = document.body;
 
@@ -83,31 +83,20 @@ export default function Navbar() {
         >
           <div>
             <ul className="flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row">
-              <li className="mt-8 mb-8 lg:mt-0 lg:mb-0">
-                <a href="#" className="text-gray-600 hover:text-indigo-600">
-                  Contact
-                </a>
-              </li>
               <li className="mt-4 lg:mt-0">
                 <Link
                   href="/login"
-                  className="py-3 px-4 text-center border text-gray-600 hover:text-indigo-600 rounded-md block lg:inline lg:border-0"
+                  className="py-3 px-4 text-center border text-gray-600  rounded-md block lg:inline lg:border-0"
                 >
-                  <a>Login</a>
+                  <a className="text-gray-600">เข้าสู่ระบบ</a>
                 </Link>
-                {/* <a
-                  href="/login"
-                  className="py-3 px-4 text-center border text-gray-600 hover:text-indigo-600 rounded-md block lg:inline lg:border-0"
-                >
-                  Login
-                </a> */}
               </li>
               <li className="mt-8 lg:mt-0">
                 <a
                   href="#"
-                  className="py-3 px-4 text-center text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow block lg:inline"
+                  className="py-3 px-4 text-center text-white bg-topbar hover:text-white rounded-full shadow block lg:inline"
                 >
-                  Sign Up
+                  ลงทะเบียน
                 </a>
               </li>
             </ul>
@@ -116,8 +105,20 @@ export default function Navbar() {
             <ul className="justify-center items-center space-y-8 lg:flex lg:space-x-10 lg:space-y-0">
               {navigation.map((item, idx) => {
                 return (
-                  <li key={idx} className="text-gray-600 hover:text-indigo-600">
-                    {/* <a href={item.path}>{item.title}</a> */}
+                  <li key={idx} className="text-gray-600 ">
+                    <Link href={`${item.path}`}>
+                      {/* <a>{item.title}</a> */}
+                      {/* <a>{item.title}</a> */}
+                      <a
+                        className={
+                          route.includes(item.path)
+                            ? " py-3 px-4 text-white bg-topbar rounded-full active"
+                            : " py-3 px-4 text-grey  rounded-full hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+                        }
+                      >
+                        {item.title}
+                      </a>
+                    </Link>
                   </li>
                 );
               })}
