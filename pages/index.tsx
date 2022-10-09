@@ -5,8 +5,8 @@ import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
-    <div className="px-36 mt-20">
-      <div className="firstText">
+    <div className="px-10 mt-20 sm:px-10 lg:px-36">
+      <div className="firstText ">
         <h1 className="text-5xl font-bold text-cyan-800 pb-5 ">
           บริการด้านกฎหมาย
         </h1>
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
           คลิก
         </button>
       </div>
-      <div className="flex justify-center mt-20 pb-4">
+      <div className="lg:flex justify-center mt-20 pb-4">
         <button className="text-xl font-bold mr-4 py-5 w-96 bg-cyan-800 text-white px-5 rounded-full">
           สร้างสัญญาด้วยตนเอง
         </button>
@@ -108,13 +108,15 @@ const Home: NextPage = () => {
         </div>
       </div>
       <hr />
-      <div className="Junior Lawyer mt-10 flex">
+      <div className="Junior Lawyer mt-10 flex justify-between">
         <h1 className="text-3xl font-bold text-cyan-800 pb-5">
           JUNIOR LAWYER ยอดนิยม
         </h1>
-        <div className="pl-96">
-          <button className="font-bold pl-96">ดูทั้งหมด &gt;</button>
-        </div>
+        <button className="font-bold">ดูทั้งหมด &gt;</button>
+      </div>
+      <div className="card">
+        <div className="card-top"></div>
+        <div className="card-bottom"></div>
       </div>
     </div>
   );
