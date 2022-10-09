@@ -113,10 +113,9 @@ const Home: NextPage = () => {
           JUNIOR LAWYER ยอดนิยม
         </h1>
         <div className="pl-96">
-        <button className="font-bold pl-96">ดูทั้งหมด ></button>
+          <button className="font-bold pl-96">ดูทั้งหมด &gt;</button>
         </div>
       </div>
-      
     </div>
   );
 };
