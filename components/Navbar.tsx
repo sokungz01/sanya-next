@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { useEffect, useState, useRef } from "react";
 import sanyaLogo from "../public/asset/svg/sanyaLogo.svg";
-
+import Bar3 from "../public/asset/icon/Bar3.svg";
 export default function Navbar({ route }: { route: string }) {
   const [state, setState] = useState(false);
   const navRef = useRef();
@@ -54,20 +54,7 @@ export default function Navbar({ route }: { route: string }) {
                   />
                 </svg>
               ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 8h16M4 16h16"
-                  />
-                </svg>
+                <Image src={Bar3} width={25} height={25} alt="" />
               )}
             </button>
           </div>
@@ -110,8 +97,8 @@ export default function Navbar({ route }: { route: string }) {
                       <a
                         className={
                           route.includes(item.path)
-                            ? " py-3 px-3 text-black bg-white rounded-full active"
-                            : " py-3 px-3 rounded-full hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+                            ? " py-2 px-2.5 text-black bg-white rounded-full active"
+                            : " py-2 px-2.5 rounded-full hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
                         }
                       >
                         {item.title}
@@ -120,6 +107,12 @@ export default function Navbar({ route }: { route: string }) {
                   </li>
                 );
               })}
+              {/* Sanya Academy */}
+              <li className="text-white font-bold bg-alert px-[1px] rounded-full">
+                <Link href={"#"}>
+                  <a>Sanya Academy</a>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

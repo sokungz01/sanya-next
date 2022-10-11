@@ -10,6 +10,7 @@ module.exports = {
         topbar: "#1A445E",
         main: "#366A82",
         sub: "#51859D",
+        alert: "#FF0000",
       },
     },
     fontFamily: {

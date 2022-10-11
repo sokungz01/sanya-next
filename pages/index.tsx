@@ -6,7 +6,11 @@ import lawyer from "../public/asset/image/lawyer.png";
 import icon1 from "../public/asset/image/icon-sm-1.png";
 import icon2 from "../public/asset/image/icon-sm-2.png";
 import icon3 from "../public/asset/image/icon-sm-3.png";
+import sampleAvatar from "../public/asset/image/sample_avatar1.jpg";
 import Link from "next/link";
+import ServiceCard from "../components/ServiceCard";
+import LongCard from "../components/LongCard";
+import LawyerCard from "../components/LawyerCard";
 const Home: NextPage = () => {
   return (
     <div className="px-10 mt-20 sm:px-10 lg:px-36">
@@ -122,10 +126,51 @@ const Home: NextPage = () => {
         </h1>
         <button className="font-bold">ดูทั้งหมด &gt;</button>
       </div>
+
       <div className="card">
-        <div className="card-top"></div>
-        <div className="card-bottom"></div>
+        <LawyerCard
+          imagePath={"/asset/image/sample_avatar1.jpg"}
+          title="Junior Lawyer1"
+          sub="Lorem Ipsum   เนื้อหาจำลองแบบเรียบๆที่ใช้กันในธุรกิจงานพิมพ์หรอืงานเรียงพิมพ์มันได้"
+        />
       </div>
+      <hr className="mx-auto my-10  h-px" />
+
+      {/* Review 3 Card */}
+      <div className="flex flex-col">
+        <h2 className="mb-2 text-2xl font-bold text-main">
+          รีวิวจากผู้ใช้งานจริง
+        </h2>
+
+        <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="flex items-start rounded-xl bg-gray-100 p-4 shadow-lg">
+            <div className="flex items-center justify-center ">
+              <Image
+                src={sampleAvatar}
+                alt=""
+                className="rounded-full"
+                width={250}
+                height={250}
+              />
+            </div>
+
+            <div className="ml-4">
+              <h2 className="font-semibold"> Andy hadysht </h2>
+              <p className="mt-2 text-sm text-gray-500">
+                เนื้อหาจำลองแบบเรียบๆที่ใช้กันในธุรกิจงานพิมพ์หรอืงานเรียงพิมพ์มันได้
+              </p>
+            </div>
+          </div>
+          <ServiceCard
+            title="test1 service card"
+            imagePath="/asset/image/sample_avatar1.jpg"
+            sub="description"
+          />
+        </div>
+      </div>
+      <hr className="mx-auto my-10  h-px" />
+      <LongCard title="mytitle" description="sdfsdf" price={0} />
+      <LongCard title="title2" description="sdfsdf" price={100} />
     </div>
   );
 };
