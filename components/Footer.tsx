@@ -64,7 +64,7 @@ export default function Footer() {
                     <a
                       href="#"
                       className="mx-2 text-white transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
-                      aria-label="Reddit"
+                      aria-label="Favebook"
                     >
                       <svg
                         className="w-5 h-5 fill-current"
@@ -106,8 +106,8 @@ export default function Footer() {
                       </svg>
                     </a>
                   </div>
-                  <p className="text-m text-white border-none dark:bg-gray-700">
-                    © Copyright 2015 - 2020 <br />
+                  <p className="text-sm text-white ">
+                    © Copyright 2015 - 2021 <br />
                     All Rights Reserved by Sanya
                   </p>
                 </div>

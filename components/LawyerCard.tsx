@@ -5,7 +5,6 @@ import Link from "next/link";
 import Chat from "../public/asset/icon/Chat.svg";
 import Heart from "../public/asset/icon/Heart.svg";
 import Share from "../public/asset/icon/Share.svg";
-type Props = {};
 
 const LawyerCard = ({
   title,
@@ -18,14 +17,14 @@ const LawyerCard = ({
 }) => {
   return (
     <div className="bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl  dark:border-gray-700 dark:bg-gray-800">
-      <div className="flex justify-between px-2 py-2">
-        <div className="">
+      <div className="flex justify-center items-center px-2 py-2">
+        <div className="overflow-hidden">
           <Image
             src={imagePath}
             alt=""
-            className="w-10 h-10 rounded-[50px]"
-            width={150}
-            height={150}
+            className="rounded-[50px]"
+            width={200}
+            height={300}
           />
         </div>
 
@@ -33,7 +32,7 @@ const LawyerCard = ({
           <Review />
           <h2 className="font-semibold"> {title} </h2>
           <p className="mt-2 text-sm text-gray-500">{sub}</p>
-          <div className="flex justify-between">
+          <div className="flex justify-between items-center pt-2">
             <Link href={"#"}>
               <a className="bg-main text-white rounded-full px-2 py-1">
                 ดูโปรไฟล์

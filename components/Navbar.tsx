@@ -10,7 +10,7 @@ export default function Navbar({ route }: { route: string }) {
 
   // Replace # path with your path
   const navigation = [
-    { title: "หน้าแรก", path: "/home" },
+    { title: "หน้าแรก", path: "/" },
     { title: "บริการ", path: "/service" },
     { title: "ชุมชน", path: "/community" },
     { title: "ช่วยเหลือ", path: "/help" },
