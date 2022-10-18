@@ -19,7 +19,7 @@ const LongCard = ({
       <div className="justify-between sm:flex">
         <div>
           <h5 className="text-l font-bold text-slate-900">
-            Building a beautiful product as a software developer
+            {title}
           </h5>
           <p className="mt-1 text-xs font-medium text-slate-600">
             Lorem Ipsum คือ เนื้อหาจำลองแบบเรียบๆ

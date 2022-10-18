@@ -11,7 +11,7 @@ const ServiceCard = ({
   imagePath: string;
 }) => {
   return (
-    <div className="flex items-center rounded-xl bg-gray-100 p-4 shadow-lg">
+    <div className="flex items-center rounded-xl p-4 shadow-lg">
       <div className="flex items-center justify-center rounded-full">
         <Image
           src={imagePath}
