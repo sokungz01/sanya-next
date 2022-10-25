@@ -22,15 +22,27 @@ const Home: NextPage = () => {
           ตรวจสอบสัญญา รวดเร็ว เข้าถึงง่าย ให้คำปรึกษาด้านกฎหมายออนไลน์ <br />
           โดยทีมงานมืออาชีพ เชื่อถือได้
         </p>
-        <button className="py-1 w-20 shadow-lg shadow-neutral-400	 bg-cyan-800 text-white px-5 rounded-full">
-          คลิก
-        </button>
+        <Link href={"/service"}>
+          <a className="py-1 w-20 shadow-lg shadow-neutral-400	 bg-cyan-800 text-white px-5 rounded-full">
+            คลิก
+          </a>
+        </Link>
       </div>
-      <div className="lg:flex justify-center mt-20 pb-4">
+      <div className="hidden xl:flex xl:justify-center   mt-20 pb-4">
         <button className="text-xl font-bold mr-4 py-5 w-96 bg-cyan-800 text-white px-5 rounded-full">
           สร้างสัญญาด้วยตนเอง
         </button>
         <button className="text-xl font-bold ml-4 py-5 w-96 bg-cyan-800 text-white px-5 rounded-full">
+          JUNIOR LAWYER
+          <br />
+          ค้นหาผู้ให้บริการด้านกฎหมายเลย!
+        </button>
+      </div>
+      <div className="hidden sm:flex sm:flex-col  space-y-5 mt-20 pb-4">
+        <button className="text-xl font-bold  py-5 w-45 bg-cyan-800 text-white px-5 rounded-full">
+          สร้างสัญญาด้วยตนเอง
+        </button>
+        <button className="text-xl font-bold  py-5 w-45 bg-cyan-800 text-white px-5 rounded-full">
           JUNIOR LAWYER
           <br />
           ค้นหาผู้ให้บริการด้านกฎหมายเลย!
@@ -120,8 +132,8 @@ const Home: NextPage = () => {
         </div>
       </div>
       <hr />
-      <div className="Junior Lawyer mt-10 flex justify-between">
-        <h1 className="text-3xl font-bold text-cyan-800 pb-5">
+      <div className="Junior Lawyer mt-10 flex justify-between items-center">
+        <h1 className="xl:text-3xl font-bold text-cyan-800 pb-5">
           JUNIOR LAWYER ยอดนิยม
         </h1>
         <button className="font-bold">ดูทั้งหมด &gt;</button>
@@ -169,8 +181,13 @@ const Home: NextPage = () => {
         </div>
       </div>
       <hr className="mx-auto my-10  h-px" />
-      <LongCard title="mytitle" description="sdfsdf" price={0} />
-      <LongCard title="title2" description="sdfsdf" price={100} />
+      <LongCard
+        title="mytitle"
+        description="sdfsdf"
+        href="/contract"
+        price={0}
+      />
+      <LongCard title="title2" description="sdfsdf" href="#" price={100} />
     </div>
   );
 };

@@ -7,7 +7,7 @@ import Link from "next/link";
 import Contract from "../../components/service/Contract";
 import Consult from "../../components/service/Consult";
 
-const Profile: NextPage = () => {
+const Service: NextPage = () => {
   const [index, setIndex] = useState<number>(1);
   return (
     <div className="px-10 mt-20 sm:px-10 lg:px-36">
@@ -63,11 +63,11 @@ const Profile: NextPage = () => {
       </div>
       {/* List Service */}
       <div className="my-4 grid grid-cols-1 gap-10 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-        {index == 1 ? <Contract /> : <div />}
-        {index == 2 ? <Consult /> : <div />}
+        {index == 1 ? <Contract /> : null}
+        {index == 2 ? <Consult /> : null}
       </div>
     </div>
   );
 };
 
-export default Profile;
+export default Service;

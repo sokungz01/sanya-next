@@ -19,6 +19,7 @@ const Index = () => {
                 <LongCard
                   title={item.title}
                   description={item.sub}
+                  href="/contract/create"
                   price={200}
                   key={i}
                 />

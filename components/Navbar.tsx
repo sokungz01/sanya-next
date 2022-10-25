@@ -28,14 +28,14 @@ export default function Navbar({ route }: { route: string }) {
   }, [state]);
   return (
     <nav className="bg-topbar w-full top-0 z-20">
-      <div className="items-center px-4 max-w-screen-xl mx-auto lg:flex lg:px-8">
-        <div className="flex items-center justify-between py-3 lg:py-4 lg:block">
+      <div className="items-center px-4 max-w-screen-xl mx-auto xl:flex xl:px-8">
+        <div className="flex items-center justify-between py-3 xl:py-4 xl:block">
           <Link href={"/"}>
             <a>
               <Image src={sanyaLogo} alt="mitr sanya" width={150} height={60} />
             </a>
           </Link>
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <button
               className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
               onClick={() => setState(!state)}
@@ -60,7 +60,7 @@ export default function Navbar({ route }: { route: string }) {
           </div>
         </div>
         <div
-          className={`flex-1 justify-between flex-row-reverse lg:overflow-visible lg:flex lg:pb-0 lg:pr-0 lg:h-auto ${
+          className={`flex-1 justify-between flex-row-reverse xl:overflow-visible lg:flex lg:pb-0 lg:pr-0 lg:h-auto ${
             state ? "h-screen pb-20 overflow-auto pr-4" : "hidden"
           }`}
         >
@@ -87,17 +87,16 @@ export default function Navbar({ route }: { route: string }) {
             </ul>
           </div>
           <div className="flex-1">
-            <ul className="justify-center items-center space-y-8 lg:flex lg:space-x-10 lg:space-y-0">
+            <ul className="justify-center items-center space-y-8 xl:flex xl:space-x-10 xl:space-y-0">
               {navigation.map((item, idx) => {
                 return (
-                  <li key={idx} className="text-white font-bold">
+                  <li key={idx} className="text-white ">
                     <Link href={`${item.path}`}>
-                      {/* <a>{item.title}</a> */}
-                      {/* <a>{item.title}</a> */}
                       <a
                         className={
-                          route.includes(item.path)
-                            ? " py-2 px-2.5 text-black bg-white rounded-full active"
+                          route === item.path
+                            ? // route.includes(item.path)
+                              " py-2 px-2.5 text-black bg-white rounded-full active"
                             : " py-2 px-2.5 rounded-full hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
                         }
                       >

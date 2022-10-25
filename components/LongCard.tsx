@@ -7,10 +7,12 @@ const LongCard = ({
   title,
   description,
   price,
+  href,
 }: {
   title: string;
   description: string;
   price: number;
+  href: string;
 }) => {
   return (
     <div className="relative block p-6 overflow-hidden border bg-white border-slate-100 rounded-[30px] ml-6 mr-6">
@@ -18,9 +20,7 @@ const LongCard = ({
 
       <div className="justify-between sm:flex">
         <div>
-          <h5 className="text-l font-bold text-slate-900">
-            {title}
-          </h5>
+          <h5 className="text-l font-bold text-slate-900">{title}</h5>
           <p className="mt-1 text-xs font-medium text-slate-600">
             Lorem Ipsum คือ เนื้อหาจำลองแบบเรียบๆ
             ที่ใช้กันในธุรกิจงานพิมพ์หรืองานเรียงพิมพ์
@@ -51,7 +51,7 @@ const LongCard = ({
               </div>
             </div>
             {/* Right */}
-            <Link href={"#"}>
+            <Link href={href ? href : "#"}>
               <a className="text-main text-sm font-bold">เริ่มทำรายการ</a>
             </Link>
           </div>
