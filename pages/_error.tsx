@@ -7,7 +7,7 @@ const Error404 = (props: Props) => {
     <div className="w-full h-full flex-col items-center align-center">
       <h1 className="text-4xl text-center flex items-center">Error404</h1>
       <h2 className="text-4xl text-center flex items-center">
-        ไม่พบหน้าที่คุณต้องการ
+        ไม่พบหน้าที่คุณต้องการ 404
       </h2>
     </div>
   );
