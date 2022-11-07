@@ -1,10 +1,16 @@
 import React from "react";
 
 type Props = {
+  step: number;
   progress: Array<string>;
 };
 
-function Progress({ progress }: Props) {
+function Progress({ step, progress }: Props) {
+  const styles = {
+    percent: {
+      width: ((step / progress.length) * 100).toString() + "%",
+    },
+  };
   return (
     <div>
       <ul className="flex justify-between items-center px-4">
@@ -21,7 +27,10 @@ function Progress({ progress }: Props) {
         })}
       </ul>
       <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-        <div className="bg-main h-2.5 rounded-full w-5/6"></div>
+        <div
+          className="bg-main h-2.5 rounded-full "
+          style={styles.percent}
+        ></div>
       </div>
     </div>
   );
