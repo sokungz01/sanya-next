@@ -1,11 +1,12 @@
 import React from "react";
-
-export default function Login() {
+import { signIn, getProviders } from "next-auth/react";
+import Link from "next/link";
+export default function Login({ providers }:{providers:any[]}) {
   return (
     <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
       <form action="" className="w-full max-w-md">
         {/* Image Logo Sanya */}
-        <h1 className="text-3xl text-center font-semibold text-gray-500 capitalize dark:text-white">
+        <h1 className="text-3xl text-center font-semibold text-main capitalize dark:text-white">
           เข้าสู่ระบบ
         </h1>
 
@@ -28,8 +29,8 @@ export default function Login() {
           </span>
           <input
             type="email"
-            name=""
-            id=""
+            name="email"
+            id="email"
             className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 dark:bg-gray-900 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
             placeholder="Email"
           />
@@ -39,6 +40,8 @@ export default function Login() {
           <input
             type="password"
             className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+            name="password"
+            id="password"
             placeholder="Password"
           ></input>
           <span className="absolute">
@@ -59,7 +62,10 @@ export default function Login() {
           </span>
         </div>
         <div className="mt-6">
-          <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+          <button
+            className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-sub rounded-md  focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+            onClick={() => signIn()}
+          >
             เข้าสู่ระบบ
           </button>
 
@@ -113,18 +119,31 @@ export default function Login() {
 
             <span className="mx-2">Facebook</span>
           </a>
+          {Object.values(providers).map((provider) => (
+            <div key={provider.name}>
+              <button onClick={() => signIn(provider.id)}>
+                Sign in with {provider.name}
+              </button>
+            </div>
+          ))}
 
           <div className="mt-6 text-center ">
             หากคุณยังไม่เป็นสมาชิก{" "}
-            <a
-              href="#"
-              className="text-sm text-blue-500 underline hover:underline dark:text-blue-400"
-            >
-              สมัครสมาชิก
-            </a>
+            <Link href="/register">
+              <a className="text-sm text-blue-500 underline  dark:text-white">
+                สมัครสมาชิก
+              </a>
+            </Link>
           </div>
         </div>
       </form>
     </div>
   );
+}
+
+export async function getServerSideProps(context:any) {
+  const providers = await getProviders();
+  return {
+    props: { providers },
+  };
 }

@@ -14,6 +14,12 @@ const Index = () => {
         <div className="bg-gray-100 px-4 py-2 rounded-[30px] my-10 mx-10">
           <h1 className="pl-4 pt-2">102 รายการ</h1>
           <div className="flex flex-col px-4 py-4 gap-2">
+            <LongCard
+              title="สัญญากู้ยืมเงิน"
+              description=""
+              href="/contract/detail"
+              price={0}
+            />
             {ListService.map((item, i) => {
               return (
                 <LongCard

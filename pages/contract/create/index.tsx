@@ -26,10 +26,40 @@ const Preview = dynamic(
 const Index = () => {
   const [step, setStep] = useState<number>(1);
   const [obj, setObj] = useState<Obj>({
-    address: "",
+    createAt: "",
     date: "",
-    name: "",
-    age: "",
+    person1: {
+      name: "",
+      age: "",
+      address: {
+        number: "",
+        line1: "",
+        province: "",
+        city: "",
+        postCode: "",
+      },
+    },
+    person2: {
+      name: "",
+      age: "",
+      address: {
+        number: "",
+        line1: "",
+        province: "",
+        city: "",
+        postCode: "",
+      },
+    },
+    amount: 0,
+    reason: "",
+    guarantee: false,
+    interest: 0,
+    interest2: 0,
+    time: 0,
+    date_purchase: 0,
+    amount_purchase: 0,
+    start: "",
+    min_date: 0,
   });
 
   // function printDocument() {
@@ -73,7 +103,7 @@ const Index = () => {
           </div>
           {/* Section2 */}
           <div id="preview" className="w-3/5 bg-gray-200 rounded-[50px] p-8">
-            <Preview obj={obj}  />
+            <Preview obj={obj} />
           </div>
         </div>
       </div>

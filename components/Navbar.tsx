@@ -2,10 +2,22 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import { useEffect, useState, useRef } from "react";
+import { useSession, signIn, signOut, getSession } from "next-auth/react";
 import sanyaLogo from "../public/asset/svg/sanyaLogo.svg";
+import {
+  MagnifyingGlassIcon,
+  UserIcon,
+  HeartIcon,
+  LockOpenIcon,
+  ChatBubbleBottomCenterTextIcon,
+  LockClosedIcon,
+} from "@heroicons/react/24/outline";
 import Bar3 from "../public/asset/icon/Bar3.svg";
+import UserDropDown from "./UserDropDown";
 export default function Navbar({ route }: { route: string }) {
   const [state, setState] = useState(false);
+  const { data: session, status } = useSession();
+  const loading = status === "loading";
   const navRef = useRef();
 
   // Replace # path with your path
@@ -66,23 +78,37 @@ export default function Navbar({ route }: { route: string }) {
         >
           <div className="float-right">
             <ul className="flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row">
-              <li className="mt-4 lg:mt-0">
-                <Link
-                  href="/login"
-                  // className="py-3 px-4 text-center borde rounded-md block lg:inline lg:border-0"
-                >
-                  <a className="py-3 px-4 text-center borde rounded-md block lg:inline lg:border-0 text-white">
-                    เข้าสู่ระบบ
-                  </a>
-                </Link>
-              </li>
-              <li className="mt-8 lg:mt-0">
-                <a
-                  href="#"
-                  className="py-3 px-4 text-center text-white bg-main hover:text-white rounded-full shadow block lg:inline"
-                >
-                  ลงทะเบียน
-                </a>
+              {status == "authenticated" ? (
+                <li className="  inline">
+                  <UserDropDown
+                    name={session.user.name}
+                    email={session.user.email}
+                    image={session.user.image}
+                  />
+                </li>
+              ) : (
+                <>
+                  <li className="mt-2 lg:mt-0">
+                    <Link
+                      href="/login"
+                      // className="py-3 px-4 text-center borde rounded-md block lg:inline lg:border-0"
+                    >
+                      <a className="py-2 px-4 text-center borde rounded-md block lg:inline lg:border-0 text-white">
+                        เข้าสู่ระบบ
+                      </a>
+                    </Link>
+                  </li>
+                  <li className="mt-2 lg:mt-0">
+                    <Link href="#">
+                      <a className="py-2 px-4 text-center borde rounded-md block lg:inline lg:border-0 text-white">
+                        ลงทะเบียน
+                      </a>
+                    </Link>
+                  </li>
+                </>
+              )}
+              <li className="lg:mt-0">
+                <MagnifyingGlassIcon className="h-5 w-5 text-white" />
               </li>
             </ul>
           </div>
@@ -107,7 +133,7 @@ export default function Navbar({ route }: { route: string }) {
                 );
               })}
               {/* Sanya Academy */}
-              <li className="text-white font-bold bg-alert px-[1px] rounded-full">
+              <li className="text-white font-bold bg-academy px-2  py-1 rounded-full">
                 <Link href={"#"}>
                   <a>Sanya Academy</a>
                 </Link>

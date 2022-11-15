@@ -13,9 +13,9 @@ import LongCard from "../components/LongCard";
 import LawyerCard from "../components/LawyerCard";
 const Home: NextPage = () => {
   return (
-    <div className="px-10 mt-20 sm:px-10 lg:px-36">
+    <div className="px-10 mt-20 sm:px-10 lg:px-36 bg-hero-pattern">
       <div className="firstText ">
-        <h1 className="text-5xl font-bold text-cyan-800 pb-5 ">
+        <h1 className="text-5xl font-bold text-sub pb-5 ">
           บริการด้านกฎหมาย
         </h1>
         <p className="text-1xl font-bold pb-5">
@@ -23,7 +23,7 @@ const Home: NextPage = () => {
           โดยทีมงานมืออาชีพ เชื่อถือได้
         </p>
         <Link href={"/service"}>
-          <a className="py-1 w-20 shadow-lg shadow-neutral-400	 bg-cyan-800 text-white px-5 rounded-full">
+          <a className="py-1 w-20 shadow-lg shadow-neutral-400	 bg-sub text-white px-5 rounded-full">
             คลิก
           </a>
         </Link>

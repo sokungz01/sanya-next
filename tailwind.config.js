@@ -11,6 +11,7 @@ module.exports = {
         main: "#51859D",
         sub: "#51859D",
         alert: "#FF0000",
+        academy: "#8C3333",
       },
     },
     screens: {
@@ -21,6 +22,9 @@ module.exports = {
     },
     fontFamily: {
       body: ["Mitr"],
+    },
+    backgroundImage: {
+      "hero-pattern": "url('/asset/image/sanya-bg.png')",
     },
   },
   plugins: [],

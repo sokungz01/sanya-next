@@ -5,10 +5,7 @@ import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import LineProvider from "next-auth/providers/line";
 
-// For more information on each option (and a full list of options) go to
-// https://next-auth.js.org/configuration/options
 export default NextAuth({
-  // https://next-auth.js.org/configuration/providers
   providers: [
     // FacebookProvider({
     //   clientId: process.env.FACEBOOK_ID,
@@ -56,9 +53,6 @@ export default NextAuth({
     // updateAge: 24 * 60 * 60, // 24 hours
   },
 
-  // JSON Web tokens are only used for sessions if the `strategy: 'jwt'` session
-  // option is set - or by default if no database is specified.
-  // https://next-auth.js.org/configuration/options#jwt
   jwt: {
     // A secret to use for key generation (you should set this explicitly)
     secret: process.env.SECRET,
@@ -98,5 +92,5 @@ export default NextAuth({
   events: {},
 
   // Enable debug messages in the console if you are having problems
-  debug: false,
+  debug: process.env.NODE_ENV === 'development',
 });

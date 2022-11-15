@@ -22,9 +22,9 @@ const DateAndPlace = ({
       />
       <InputType label="กรอกวันที่ ที่จะทำสัญญา" type="date" name="date" setObj={setObj} />
       <InputType
-        name="address"
+        name="createAt"
         label="สถานที่"
-        placeholder="ระบุสถานที่"
+        placeholder="ระบุสถานที่ที่ทำสัญญา"
         setObj={setObj}
       />
       <InputOption />

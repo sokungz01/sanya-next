@@ -1,6 +1,6 @@
 import React from "react";
 
-const BlankSpan = ({ obj }: { obj: string }) => {
+const BlankSpan = ({ obj }: { obj: string | number }) => {
   const blank = "   ";
   return (
     <span
