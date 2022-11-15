@@ -16,29 +16,31 @@ const LawyerCard = ({
   imagePath: string;
 }) => {
   return (
-    <div className="bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl  dark:border-gray-700 dark:bg-gray-800">
-      <div className="flex justify-center items-center px-2 py-2">
-        <div className="overflow-hidden">
+    <div className="bg-white rounded-lg border shadow-md md:flex-row lg:w-[600px] dark:border-gray-700 dark:bg-gray-800">
+      <div className="flex justify-center  p-6">
+        <div className="relative h-64 w-52">
           <Image
             src={imagePath}
             alt=""
-            className="rounded-[50px]"
-            width={200}
-            height={300}
+            className="object-contain rounded-[50px]"
+            layout="fill" // required
+            objectFit="cover" // change to suit your needs
           />
         </div>
 
-        <div className="ml-4  text-center p-8">
+        <div className="ml-8 mt-6">
           <Review />
           <h2 className="font-semibold"> {title} </h2>
+          <div className="lg:w-80 ">
           <p className="mt-2 text-sm text-gray-500">{sub}</p>
-          <div className="flex justify-between items-center pt-2">
+          </div>
+          <div className="flex justify-between bottom-0">
             <Link href={"#"}>
-              <a className="bg-main text-white rounded-full px-2 py-1">
+              <a className="bg-main text-white rounded-full px-2 py-1 ">
                 ดูโปรไฟล์
               </a>
             </Link>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 ">
               <div>
                 <Image src={Chat} alt="" />
               </div>
