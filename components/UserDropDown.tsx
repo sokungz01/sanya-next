@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useSession, signOut, getSession } from "next-auth/react";
 import Image from "next/image";
 import {
-  BeakerIcon,
   UserIcon,
   HeartIcon,
   LockOpenIcon,
@@ -74,7 +73,7 @@ const UserDropDown = ({
             onClick={() => setShow(false)}
           >
             <UserIcon className="h-4 2-4 mr-2" />
-            <Link href={"/profile"}>
+            <Link href={"/profile/"+email+"/personal"}>
               <a>บัญชีของฉัน</a>
             </Link>
           </div>

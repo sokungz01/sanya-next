@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Account() {
   const { data: session, status } = useSession({ required: true });
   const loading = status === "loading";
-  if (status == "authenticated") {
+  if (status == "authenticated") {  
     return (
       <div>
         <h1>Hello, Welcome &quot;{session.user?.name}&quot;</h1>

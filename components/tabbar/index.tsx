@@ -9,7 +9,7 @@ type Tab = {
 function TabBar({ route, tabs }: { route: string; tabs: Tab[] }) {
   // console.log(route, "asdf");
   return (
-    <ul className="flex flex-wrap text-sm py-2 font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
+    <ul className="flex flex-wrap text-sm px-2 py-2 font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
       {tabs?.map((tab) => (
         <li className="mr-2" key={tab.label}>
           <Link

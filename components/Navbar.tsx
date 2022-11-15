@@ -90,7 +90,7 @@ export default function Navbar({ route }: { route: string }) {
                 <>
                   <li className="mt-2 lg:mt-0">
                     <Link
-                      href="/login"
+                      href="/customer/login"
                       // className="py-3 px-4 text-center borde rounded-md block lg:inline lg:border-0"
                     >
                       <a className="py-2 px-4 text-center borde rounded-md block lg:inline lg:border-0 text-white">
