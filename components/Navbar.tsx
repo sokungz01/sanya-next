@@ -40,14 +40,14 @@ export default function Navbar({ route }: { route: string }) {
   }, [state]);
   return (
     <nav className="bg-topbar w-full top-0 z-20">
-      <div className="items-center px-4 max-w-screen-xl mx-auto xl:flex xl:px-8">
-        <div className="flex items-center justify-between py-3 xl:py-4 xl:block">
+      <div className="items-center px-4 max-w-screen-xl mx-auto lg:flex xl:flex xl:px-8">
+        <div className="flex items-center justify-between py-3 lg:py-4 lg:block xl:py-4 xl:block">
           <Link href={"/"}>
             <a>
               <Image src={sanyaLogo} alt="mitr sanya" width={150} height={60} />
             </a>
           </Link>
-          <div className="xl:hidden">
+          <div className="lg:hidden xl:hidden">
             <button
               className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
               onClick={() => setState(!state)}
@@ -72,12 +72,12 @@ export default function Navbar({ route }: { route: string }) {
           </div>
         </div>
         <div
-          className={`flex-1 justify-between flex-row-reverse xl:overflow-visible lg:flex lg:pb-0 lg:pr-0 lg:h-auto ${
+          className={`flex-1 justify-between flex-row-reverse xl:flex xl:pb-0 xl:pr-0 xl:h-auto lg:flex lg:pb-0 lg:pr-0 lg:h-auto ${
             state ? "h-screen pb-20 overflow-auto pr-4" : "hidden"
           }`}
         >
           <div className="float-right">
-            <ul className="flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row">
+            <ul className="flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row xl:space-x-8 xl:flex-row">
               {status == "authenticated" ? (
                 <li className="  inline">
                   <UserDropDown
@@ -88,32 +88,32 @@ export default function Navbar({ route }: { route: string }) {
                 </li>
               ) : (
                 <>
-                  <li className="mt-2 lg:mt-0">
+                  <li className="mt-2 lg:mt-1 xl:mt-1">
                     <Link
                       href="/customer/login"
                       // className="py-3 px-4 text-center borde rounded-md block lg:inline lg:border-0"
                     >
-                      <a className="py-2 px-4 text-center borde rounded-md block lg:inline lg:border-0 text-white">
+                      <a className="py-2 px-4 text-center rounded-md block lg:inline xl:inline text-white">
                         เข้าสู่ระบบ
                       </a>
                     </Link>
                   </li>
-                  <li className="mt-2 lg:mt-0">
+                  <li className="mt-2 lg:mt-1 xl:mt-1">
                     <Link href="#">
-                      <a className="py-2 px-4 text-center borde rounded-md block lg:inline lg:border-0 text-white">
+                      <a className="py-2 px-4 text-center rounded-md block lg:inline xl:inline text-white">
                         ลงทะเบียน
                       </a>
                     </Link>
                   </li>
                 </>
               )}
-              <li className="lg:mt-0">
+              <li className="lg:mt-2 xl:mt-2">
                 <MagnifyingGlassIcon className="h-5 w-5 text-white" />
               </li>
             </ul>
           </div>
           <div className="flex-1">
-            <ul className="justify-center items-center space-y-8 xl:flex xl:space-x-10 xl:space-y-0">
+            <ul className="justify-center items-center space-y-8 lg:flex lg:space-x-6 lg:space-y-0 xl:flex xl:space-x-10 xl:space-y-0">
               {navigation.map((item, idx) => {
                 return (
                   <li key={idx} className="text-white ">
@@ -122,8 +122,8 @@ export default function Navbar({ route }: { route: string }) {
                         className={
                           route === item.path
                             ? // route.includes(item.path)
-                              " py-2 px-2.5 text-black bg-white rounded-full active"
-                            : " py-2 px-2.5 rounded-full hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+                              "lg:px-0 xl:px-1 xl:py-1 py-2 px-2.5 text-black bg-white rounded-full active"
+                            : "lg:px-0 xl:px-1 xl:py-1 py-2 px-2.5 rounded-full hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
                         }
                       >
                         {item.title}
@@ -133,7 +133,7 @@ export default function Navbar({ route }: { route: string }) {
                 );
               })}
               {/* Sanya Academy */}
-              <li className="text-white font-bold bg-academy px-2  py-1 rounded-full">
+              <li className="text-white font-bold bg-academy px-2 py-1 rounded-full">
                 <Link href={"#"}>
                   <a>Sanya Academy</a>
                 </Link>
