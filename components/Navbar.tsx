@@ -7,12 +7,11 @@ import sanyaLogo from "../public/asset/svg/sanyaLogo.svg";
 import {
   MagnifyingGlassIcon,
   UserIcon,
-  HeartIcon,
-  LockOpenIcon,
-  ChatBubbleBottomCenterTextIcon,
-  LockClosedIcon,
+  Bars3Icon
 } from "@heroicons/react/24/outline";
-import Bar3 from "../public/asset/icon/Bar3.svg";
+import Bar3Dropdown from "./Bar3Dropdown";
+import LoginDropDown from "./LoginDropdown";
+import LanguageDropDown from "./LanguageDropdown";
 import UserDropDown from "./UserDropDown";
 export default function Navbar({ route }: { route: string }) {
   const [state, setState] = useState(false);
@@ -39,34 +38,23 @@ export default function Navbar({ route }: { route: string }) {
     else body.classList.remove(...customBodyStyle);
   }, [state]);
   return (
-    <nav className="bg-topbar w-full top-0 z-20">
-      <div className="items-center px-4 max-w-screen-xl mx-auto lg:flex xl:flex xl:px-8">
+    <nav className="bg-[#1A445E] w-full top-0 z-20">
+      <div className="items-center px-4 max-w-screen-xl mx-auto lg:flex xl:flex">
         <div className="flex items-center justify-between py-3 lg:py-4 lg:block xl:py-4 xl:block">
           <Link href={"/"}>
-            <a>
-              <Image src={sanyaLogo} alt="mitr sanya" width={150} height={60} />
-            </a>
-          </Link>
+              <a>
+                <Image src={sanyaLogo} alt="mitr sanya" width={150} height={60} />
+              </a>
+            </Link>
           <div className="lg:hidden xl:hidden">
             <button
               className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
               onClick={() => setState(!state)}
             >
               {state ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <Bars3Icon className="h-5 w-5 text-white" />
               ) : (
-                <Image src={Bar3} width={25} height={25} alt="" />
+                <Bars3Icon className="h-5 w-5 text-white" />
               )}
             </button>
           </div>
@@ -77,7 +65,7 @@ export default function Navbar({ route }: { route: string }) {
           }`}
         >
           <div className="float-right">
-            <ul className="flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row xl:space-x-8 xl:flex-row">
+            <ul className="text-sm flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row xl:space-x-8 xl:flex-row">
               {status == "authenticated" ? (
                 <li className="  inline">
                   <UserDropDown
@@ -88,32 +76,47 @@ export default function Navbar({ route }: { route: string }) {
                 </li>
               ) : (
                 <>
-                  <li className="mt-2 lg:mt-1 xl:mt-1">
-                    <Link
-                      href="/customer/login"
-                      // className="py-3 px-4 text-center borde rounded-md block lg:inline lg:border-0"
-                    >
-                      <a className="py-2 px-4 text-center rounded-md block lg:inline xl:inline text-white">
-                        เข้าสู่ระบบ
-                      </a>
-                    </Link>
+                  <li className="mt-2 lg:-mt-1 xl:mt-0">
+                      <LoginDropDown
+                      name="เข้าสู่ระบบ"
+                      menu1="บุคคลทั่วไป"
+                      link1="customer/login"
+                      menu2="ทนายความ"
+                      link2="#"
+                      />
                   </li>
                   <li className="mt-2 lg:mt-1 xl:mt-1">
                     <Link href="#">
-                      <a className="py-2 px-4 text-center rounded-md block lg:inline xl:inline text-white">
+                      <a className="lg:px-0 xl:px-0 xl:py-1 py-2 px-4 rounded-full text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white">
+                      <UserIcon className="h-5 w-5 text-white inline mr-1 -mt-1" />
                         ลงทะเบียน
                       </a>
                     </Link>
                   </li>
                 </>
               )}
-              <li className="lg:mt-2 xl:mt-2">
+              <li className="lg:mt-1 xl:mt-1">
                 <MagnifyingGlassIcon className="h-5 w-5 text-white" />
+              </li>
+              <li className="lg:mt-1 xl:mt-1">
+                <Bar3Dropdown
+                  menu1="วิธีใช้"
+                  link1="#"
+                  menu2="ตั้งค่า"
+                  link2="#"
+                />
+              </li>
+              <li className="lg:mt-1 xl:mt-1">
+                <LanguageDropDown 
+                  name="TH"
+                  menu1="TH"
+                  menu2="EN"
+                  />
               </li>
             </ul>
           </div>
           <div className="flex-1">
-            <ul className="justify-center items-center space-y-8 lg:flex lg:space-x-6 lg:space-y-0 xl:flex xl:space-x-10 xl:space-y-0">
+            <ul className="text-sm justify-center items-center space-y-8 lg:flex lg:space-x-6 lg:space-y-0 xl:flex xl:space-x-10 xl:space-y-0">
               {navigation.map((item, idx) => {
                 return (
                   <li key={idx} className="text-white ">
@@ -122,8 +125,8 @@ export default function Navbar({ route }: { route: string }) {
                         className={
                           route === item.path
                             ? // route.includes(item.path)
-                              "lg:px-0 xl:px-1 xl:py-1 py-2 px-2.5 text-black bg-white rounded-full active"
-                            : "lg:px-0 xl:px-1 xl:py-1 py-2 px-2.5 rounded-full hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+                              "lg:px-0 xl:px-0 xl:py-1 py-2 px-2.5 text-black bg-white rounded-full active"
+                            : "lg:px-0 xl:px-0 xl:py-1 py-2 px-2.5 rounded-full hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
                         }
                       >
                         {item.title}
