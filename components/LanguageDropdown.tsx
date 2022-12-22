@@ -20,7 +20,7 @@ const LanguageDropDown = ({
         <span className="mx-2">{name}</span>
       </button>
       {show ? (
-        <div className="absolute text-sub right-0 w-16 py-2 mt-2 overflow-hidden bg-white rounded-md shadow-xl ">
+        <div className="absolute text-sub right-4 w-12 overflow-hidden bg-white rounded-md shadow-xl ">
           <div
             className="flex flex-row items-center px-4 py-3 text-sm  cursor-pointer text-sub  transition-colors duration-200 transform hover:bg-gray-100 "
             onClick={() => setShow(false)}

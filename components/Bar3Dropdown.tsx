@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 
 import {
-  UserIcon,
-  LockClosedIcon
+    Bars3Icon,
+    Cog8ToothIcon,
+    ClipboardDocumentIcon
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-const LoginDropDown = ({
-  name,
+const Bar3DropDown = ({
   menu1,
   link1,
   menu2,
   link2
 }: {
-  name : string;
   menu1: string;
   link1: string;
   menu2: string;
@@ -24,27 +23,26 @@ const LoginDropDown = ({
   return (
     <>
       <button
-        className="lg:px-0 xl:px-0 xl:py-1 py-2 px-4 rounded-full text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+        className="lg:px-0 xl:px-0 xl:py-0 py-2 px-4 rounded-full text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
         onClick={() => setShow(!show)}
       >
-        <LockClosedIcon className="h-5 w-5 text-white inline mr-1 -mt-1" />
-        <span className="mx-2">{name}</span>
+        <Bars3Icon className="h-5 w-5 text-white inline mr-1 -mt-1" />
 
       </button>
       {show ? (
-        <div className="absolute text-sub right-72 w-32 overflow-hidden bg-white rounded-md shadow-xl ">
+        <div className="absolute text-sub right-8 w-24 overflow-hidden bg-white rounded-md shadow-xl ">
           <div
             className="flex flex-row items-center px-4 py-3 text-sm  cursor-pointer text-sub  transition-colors duration-200 transform hover:bg-gray-100 "
             onClick={() => setShow(false)}
           >
-            <UserIcon className="h-4 2-4 mr-2" />
+            <ClipboardDocumentIcon className="h-4 2-4 mr-2" />
             <Link href={ link1 }>
               <a> {menu1} </a>
             </Link>
           </div>
           <hr />
           <div className="flex flex-row items-center px-4 py-3 text-sm  cursor-pointer text-sub  transition-colors duration-200 transform  hover:bg-gray-100 ">
-            <UserIcon className="h-4 2-4 mr-2" />
+            <Cog8ToothIcon className="h-4 2-4 mr-2" />
             <Link href={ link2 }>
               <a> {menu2} </a>
             </Link>
@@ -54,5 +52,5 @@ const LoginDropDown = ({
     </>
   );
 };
-export default  LoginDropDown;
+export default  Bar3DropDown;
 

@@ -7,12 +7,9 @@ import sanyaLogo from "../public/asset/svg/sanyaLogo.svg";
 import {
   MagnifyingGlassIcon,
   UserIcon,
-  HeartIcon,
-  LockOpenIcon,
-  ChatBubbleBottomCenterTextIcon,
-  LockClosedIcon,
   Bars3Icon
 } from "@heroicons/react/24/outline";
+import Bar3Dropdown from "./Bar3Dropdown";
 import LoginDropDown from "./LoginDropdown";
 import LanguageDropDown from "./LanguageDropdown";
 import UserDropDown from "./UserDropDown";
@@ -102,7 +99,12 @@ export default function Navbar({ route }: { route: string }) {
                 <MagnifyingGlassIcon className="h-5 w-5 text-white" />
               </li>
               <li className="lg:mt-1 xl:mt-1">
-                <Bars3Icon className="h-5 w-5 text-white" />
+                <Bar3Dropdown
+                  menu1="วิธีใช้"
+                  link1="#"
+                  menu2="ตั้งค่า"
+                  link2="#"
+                />
               </li>
               <li className="lg:mt-1 xl:mt-1">
                 <LanguageDropDown 
