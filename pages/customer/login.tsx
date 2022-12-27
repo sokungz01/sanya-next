@@ -1,5 +1,5 @@
 import React from "react";
-import { signIn,getSession } from "next-auth/react";
+import { signIn, getSession } from "next-auth/react";
 import Link from "next/link";
 export default function Login({ providers }: { providers: any[] }) {
   return (
@@ -76,7 +76,7 @@ export default function Login({ providers }: { providers: any[] }) {
             {/* Google Login */}
             <a
               className="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 cursor-pointer transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
-              onClick={() => signIn("google", { callbackUrl: '/'})}
+              onClick={() => signIn("google", { callbackUrl: "/" })}
             >
               <svg className="w-6 h-6 mx-2" viewBox="0 0 40 40">
                 <path
@@ -117,6 +117,13 @@ export default function Login({ providers }: { providers: any[] }) {
 
               <span className="mx-2">Facebook</span>
             </a>
+            {/* Line Login */}
+            <a
+              className="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 cursor-pointer transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+              onClick={() => signIn("line", { callbackUrl: "/" })}
+            >
+              <span className="mx-2">Line</span>
+            </a>
 
             <div className="mt-6 text-center ">
               หากคุณยังไม่เป็นสมาชิก{" "}
@@ -132,7 +139,7 @@ export default function Login({ providers }: { providers: any[] }) {
     </div>
   );
 }
-export const getServerSideProps = async (context:any) => {
+export const getServerSideProps = async (context: any) => {
   const session = await getSession(context);
   if (session) {
     return {
