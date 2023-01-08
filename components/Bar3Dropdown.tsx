@@ -23,7 +23,7 @@ const Bar3DropDown = ({
   return (
     <>
       <button
-        className="lg:px-0 xl:px-0 xl:py-0 py-2 px-4 rounded-full text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+        className="lg:px-0 xl:px-0 xl:py-0 py-2 px-4 rounded-full text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white sm:hidden md:hidden"
         onClick={() => setShow(!show)}
       >
         <Bars3Icon className="h-5 w-5 text-white inline mr-1 -mt-1" />
@@ -49,6 +49,23 @@ const Bar3DropDown = ({
           </div>
         </div>
       ) : null}
+       <div className="lg:hidden xl:hidden">
+       <Link href={link1}>
+          <a className="font-bold text-navbartext-navbar ml-4 flex -mt-3 -mb-3 bg-gray-200 ">
+            <p className="ml-4 w-[93%]  text-navbar"> {menu1} </p>
+            <p className=" lg:hidden xl:hidden text-2xl text-navbar "> &gt; </p>
+          </a>
+        </Link>
+        <div className="lg:hidden xl:hidden">
+          <hr className="h-px ml-2 my-8 bg-gray-300 border-0 w-full "/>
+        </div>
+        <Link href={link2}>
+          <a className="font-bold text-navbartext-navbar ml-4 flex -mt-3 -mb-3 bg-gray-200 ">
+            <p className="ml-4 w-[93%]  text-navbar"> {menu2} </p>
+            <p className=" lg:hidden xl:hidden text-2xl text-navbar "> &gt; </p>
+          </a>
+        </Link>
+      </div>
     </>
   );
 };

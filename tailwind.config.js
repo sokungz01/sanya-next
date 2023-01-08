@@ -12,6 +12,7 @@ module.exports = {
         sub: "#51859D",
         alert: "#FF0000",
         academy: "#8C3333",
+        navbar : "#1A445E",
       },
     },
     screens: {
