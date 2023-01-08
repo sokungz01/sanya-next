@@ -14,7 +14,7 @@ const LanguageDropDown = ({
   return (
     <>
       <button
-        className="text-[#1A445E] bg-white text-xs rounded-lg pl-1 pr-1 pt-2 pb-2 -mt-2"
+        className="text-[#1A445E] bg-white text-xs rounded-lg pl-1 pr-1 pt-2 pb-2 -mt-2 sm:hidden md:hidden"
         onClick={() => setShow(!show)}
       >
         <span className="mx-2">{name}</span>
@@ -33,6 +33,12 @@ const LanguageDropDown = ({
           </div>
         </div>
       ) : null}
+      <div className="lg:hidden xl:hidden">
+        <a className="font-bold text-navbartext-navbar ml-4 flex -mt-3 -mb-3 bg-gray-200 ">
+          <p className="ml-4 w-[90%]  text-navbar"> ภาษา </p>
+          <p className=" lg:hidden xl:hidden text-2xl text-black "> {menu1}</p>
+        </a>
+      </div>
     </>
   );
 };

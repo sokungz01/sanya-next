@@ -24,7 +24,7 @@ const LoginDropDown = ({
   return (
     <>
       <button
-        className="lg:px-0 xl:px-0 xl:py-1 py-2 px-4 rounded-full text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+        className="lg:px-0 xl:px-0 xl:py-1 py-2 px-4 rounded-full text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white md:hidden sm:hidden"
         onClick={() => setShow(!show)}
       >
         <LockClosedIcon className="h-5 w-5 text-white inline mr-1 -mt-1" />
@@ -51,6 +51,12 @@ const LoginDropDown = ({
           </div>
         </div>
       ) : null}
+      <div className="lg:hidden xl:hidden">
+        <a className="font-bold text-navbartext-navbar ml-4 flex -mt-3 -mb-3 bg-gray-200 ">
+          <p className="ml-4 w-[93%]  text-navbar"> {name} </p>
+          <p className=" lg:hidden xl:hidden text-2xl text-navbar "> &gt; </p>
+        </a>
+      </div>
     </>
   );
 };
