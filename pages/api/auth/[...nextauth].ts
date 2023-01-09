@@ -22,10 +22,10 @@ export default NextAuth({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
     }),
-    // LineProvider({
-    //   clientId: process.env.LINE_ID,
-    //   clientSecret: process.env.LINE_SECRET,
-    // }),
+    LineProvider({
+      clientId: process.env.LINE_ID as string,
+      clientSecret: process.env.LINE_SECRET as string,
+    }),
   ],
   // Database optional. MySQL, Maria DB, Postgres and MongoDB are supported.
   // https://next-auth.js.org/configuration/databases
@@ -92,5 +92,5 @@ export default NextAuth({
   events: {},
 
   // Enable debug messages in the console if you are having problems
-  debug: process.env.NODE_ENV === 'development',
+  debug: process.env.NODE_ENV === "development",
 });
