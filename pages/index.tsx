@@ -6,9 +6,6 @@ import lawyer from "../public/asset/image/lawyer.png";
 import icon1 from "../public/asset/image/icon-sm-1.png";
 import icon2 from "../public/asset/image/icon-sm-2.png";
 import icon3 from "../public/asset/image/icon-sm-3.png";
-import {
-  PencilIcon
-} from "@heroicons/react/24/outline";
 import sampleAvatar from "../public/asset/image/sample_avatar1.jpg";
 import Link from "next/link";
 import ServiceCard from "../components/ServiceCard";
@@ -16,7 +13,7 @@ import LongCard from "../components/LongCard";
 import LawyerCard from "../components/LawyerCard";
 const Home: NextPage = () => {
   return (
-    <div className="px-10 sm:px-10 lg:px-36 bg-hero-pattern bg-zinc-100 ">
+    <div className="px-10 bg-hero-pattern bg-zinc-100 ">
      <div className="lg:ml-2 lg:mr-2 ml-16 mr-16">
      <div className="firstText pt-20 pl-16">
         <h1 className="text-5xl font-bold text-cyan-800 pb-5">
@@ -38,12 +35,12 @@ const Home: NextPage = () => {
             &nbsp;
             <Image src={pen} alt="pen" className="h-24 w-24 bg-white rounded-full"/>
           </div>
-          <button className="bg-cyan-800 text-xl lg:text-md font-bold xl:-ml-16 -ml-20 xl:mt-4 mt-2 xl:mr-4 lg:mr-2 xl:pl-16 pl-20 px-10 py-3 xl:w-96 xl:h-24 lg:w-72 lg:h-24 w-5/6  h-28 text-white rounded-full ">
+          <button className="bg-cyan-800 text-xl xl:text-2xl lg:text-md sm:text-md font-bold xl:-ml-16 -ml-20 xl:mt-4 mt-2 xl:mr-4 lg:mr-2 xl:pl-16 pl-20 px-10 py-3 xl:w-4/5 xl:h-24 lg:w-4/5 lg:h-24 w-5/6  h-28 text-white rounded-full ">
             สร้างสัญญาด้วยตนเอง
           </button>
         </div>
         <div className="flex justify-center mt-3 mb-3 w-full">
-          <button className="bg-cyan-800 text-xl lg:text-md font-bold xl:ml-20 lg:ml-12 xl:mt-4 lg:mt-2 mt-1 px-10 py-3 xl:pr-16 lg:pr-20 pr-20 xl:w-96 xl:h-24 lg:w-72 lg:h-24 w-5/6 h-28 md:w-5/6 text-white rounded-full">
+          <button className="bg-cyan-800 text-xl xl:text-2xl lg:text-md sm:text-md font-bold xl:ml-20 lg:ml-12 xl:mt-4 lg:mt-2 mt-1 px-10 py-3 xl:pr-16 lg:pr-20 pr-20 xl:w-4/5 xl:h-24 lg:w-4/5 lg:h-24 w-5/6 h-28 md:w-5/6 text-white rounded-full">
             JUNIOR LAWYER
             <br />
             ค้นหาผู้ให้บริการด้านกฎหมายเลย!

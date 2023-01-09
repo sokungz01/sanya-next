@@ -14,10 +14,10 @@ const LanguageDropDown = ({
   return (
     <>
       <button
-        className="text-[#1A445E] bg-white text-xs rounded-lg pl-1 pr-1 pt-2 pb-2 -mt-2 sm:hidden md:hidden"
+        className="text-navbar flex bg-white text-xs rounded-lg pl-1 pr-1 pt-2 pb-2 -mt-1 sm:hidden md:hidden"
         onClick={() => setShow(!show)}
       >
-        <span className="mx-2">{name}</span>
+        <p className="px-2 py-0.5">{name}</p>
       </button>
       {show ? (
         <div className="absolute text-sub right-4 w-12 overflow-hidden bg-white rounded-md shadow-xl ">

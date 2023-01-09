@@ -68,7 +68,7 @@ export default function Navbar({ route }: { route: string }) {
           }`}
         >
           <div className="flex-1 sm:order-1 md:order-1 sm:mt-12 md:mt-12">
-            <ul className="text-sm sm:text-2xl md:text-2xl justify-center items-center space-y-8 lg:flex lg:space-x-6 lg:space-y-0 xl:flex xl:space-x-10 xl:space-y-0">
+            <ul className="text-sm sm:text-2xl md:text-2xl  justify-center items-center space-y-8 lg:flex lg:space-x-4 lg:space-y-0 xl:flex xl:space-x-10 xl:space-y-0">
               {navigation.map((item, idx) => {
                 return (
                   <li key={idx} className="text-white">
@@ -106,7 +106,7 @@ export default function Navbar({ route }: { route: string }) {
             </ul>
           </div>
           <div className="">
-            <ul className="text-sm sm:text-2xl md:text-2xl flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row xl:space-x-8 xl:flex-row">
+            <ul className="text-sm sm:text-2xl md:text-2xl flex lg:-mt-2 xl:mt-0 lg:flex-row xl:flex-row xl:space-x-8 lg:space-x-2">
               {status == "authenticated" ? (
                 <li className=" inline md:hidden sm:hidden">
                   <UserDropDown
@@ -117,7 +117,7 @@ export default function Navbar({ route }: { route: string }) {
                 </li>
               ) : (
                 <>
-                  <li className="mt-2 lg:-mt-1 xl:mt-0">
+                  <li>
                       <LoginDropDown
                       name="เข้าสู่ระบบ"
                       menu1="บุคคลทั่วไป"
@@ -129,10 +129,10 @@ export default function Navbar({ route }: { route: string }) {
                         <hr className="h-px ml-2 my-8 bg-gray-300 border-0 w-full "/>
                       </div>
                   </li>
-                  <li className="">
+                  <li>
                     <Link href="#">
-                      <a className="flex xl:-mt-1 lg:px-4 xl:px-4 xl:py-2 lg:py-2 rounded-full text-white hover:text-gray-900 hover:bg-gray-100 md:hover:bg-gray-200 md:hover:text-navbar md:text-navbar sm:hover:bg-gray-200 sm:hover:text-navbar sm:text-navbar">
-                      <UserIcon className="h-5 w-5 text-white inline mr-1 -mt-1 md:hidden sm:hidden" />
+                      <a className="flex xl:-mt-1 xl:py-2 lg:py-2 rounded-full text-white hover:text-gray-900 hover:bg-gray-100 md:hover:bg-gray-200 md:hover:text-navbar md:text-navbar sm:hover:bg-gray-200 sm:hover:text-navbar sm:text-navbar">
+                      <UserIcon className="h-5 w-5 text-white inline mr-0.5 md:hidden sm:hidden" />
                       <p className="sm:ml-8 md:ml-8 sm:w-[90%] md:w-[91.5%] md:-mt-5 sm:-mt-5 -mb-4">ลงทะเบียน</p>
                       <p className=" lg:hidden xl:hidden text-2xl text-navbar -mt-5 -mb-4"> &gt; </p>
                       </a>
@@ -143,10 +143,10 @@ export default function Navbar({ route }: { route: string }) {
                   </li>
                 </>
               )}
-              <li className="lg:mt-1 xl:mt-1 sm:hidden md:hidden">
-                <MagnifyingGlassIcon className="h-5 w-5 text-white" />
+              <li className="sm:hidden md:hidden">
+                <MagnifyingGlassIcon className="h-5 w-5 text-white lg:mt-2 xl:mt-1" />
               </li>
-              <li className="lg:mt-1 xl:mt-1">
+              <li>
                 <Bar3Dropdown
                   menu1="วิธีใช้"
                   link1="#"
@@ -157,7 +157,7 @@ export default function Navbar({ route }: { route: string }) {
                   <hr className="h-px ml-2 my-8 bg-gray-300 border-0 w-full "/>
                 </div>
               </li>
-              <li className="lg:mt-1 xl:mt-1">
+              <li>
                 <LanguageDropDown 
                   name="TH"
                   menu1="TH"

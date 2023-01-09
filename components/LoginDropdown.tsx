@@ -28,7 +28,7 @@ const LoginDropDown = ({
         onClick={() => setShow(!show)}
       >
         <LockClosedIcon className="h-5 w-5 text-white inline mr-1 -mt-1" />
-        <span className="mx-2">{name}</span>
+        <span>{name}</span>
 
       </button>
       {show ? (

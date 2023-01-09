@@ -16,6 +16,7 @@ module.exports = {
       },
     },
     screens: {
+      xs: { min: "0px", max: "339px" },
       sm: { min: "340px", max: "767px" },
       md: { min: "768px", max: "1023px" },
       lg: { min: "1024px", max: "1279px" },
@@ -26,6 +27,7 @@ module.exports = {
     },
     backgroundImage: {
       "hero-pattern": "url('/asset/image/sanya-bg.png')",
+      "sign-paper": "url('/asset/image/signpaper-bg.png')",
     },
   },
   plugins: [],
