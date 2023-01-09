@@ -14,10 +14,10 @@ function Input({
   placeholder?: string;
 }) {
   return (
-    <div className="m-2 flex-1 ">
+    <div className="flex-1">
       <label
         htmlFor={id}
-        className="block text-sm font-medium text-gray-700 ml-1"
+        className="block text-default font-medium text-gray-700"
       >
         {label ? label : placeholder}
       </label>
@@ -27,7 +27,7 @@ function Input({
           name={name}
           id={id}
           placeholder={placeholder}
-          className="p-2 shadow-md focus:ring-indigo-500 focus:border-topbar block w-full sm:text-sm border-gray-200 rounded-md"
+          className="mt-1 block w-full px-10 py-3 text-gray-700 bg-white border rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
         />
       </div>
     </div>

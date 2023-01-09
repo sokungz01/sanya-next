@@ -68,7 +68,7 @@ export default function Navbar({ route }: { route: string }) {
           }`}
         >
           <div className="flex-1 sm:order-1 md:order-1 sm:mt-12 md:mt-12">
-            <ul className="text-sm sm:text-2xl md:text-2xl  justify-center items-center space-y-8 lg:flex lg:space-x-4 lg:space-y-0 xl:flex xl:space-x-10 xl:space-y-0">
+            <ul className="text-sm sm:text-2xl md:text-2xl justify-center items-center space-y-4 lg:flex lg:space-x-1 lg:space-y-0 xl:flex xl:space-x-4 xl:space-y-0">
               {navigation.map((item, idx) => {
                 return (
                   <li key={idx} className="text-white">
@@ -77,8 +77,8 @@ export default function Navbar({ route }: { route: string }) {
                         className={
                           route === item.path
                             ? // route.includes(item.path)
-                              "lg:px-0 xl:px-0 xl:py-1 text-black bg-white rounded-full active sm:text-navbar md:text-navbar sm:bg-gray-200 md:bg-gray-200 sm:ml-4 md:ml-4 flex sm:-mt-3 md:-mt-3 sm:-mb-3 md:-mb-3" 
-                            : "lg:px-0 xl:px-0 xl:py-1 rounded-full hover:text-gray-900 hover:bg-gray-200 sm:text-navbar md:text-navbar sm:ml-4 md:ml-4 flex sm:-mt-3 md:-mt-3 sm:-mb-3 md:-mb-3"
+                              "lg:px-2 lg:py-1 xl:px-1.5 xl:py-1 text-black bg-white rounded-full active sm:text-navbar md:text-navbar sm:bg-gray-200 md:bg-gray-200 sm:ml-4 md:ml-4 flex sm:-mt-3 md:-mt-3 sm:-mb-3 md:-mb-3" 
+                            : "lg:px-2 lg:py-1 xl:px-1.5 xl:py-1 rounded-full hover:text-gray-900 hover:bg-gray-200 sm:text-navbar md:text-navbar sm:ml-4 md:ml-4 flex sm:-mt-3 md:-mt-3 sm:-mb-3 md:-mb-3"
                         }
                       >
                         <p className="sm:ml-4 md:ml-4 sm:w-[93%] md:w-[93%]">{item.title}</p>
@@ -94,7 +94,7 @@ export default function Navbar({ route }: { route: string }) {
               {/* Sanya Academy */}
               <li className="text-white">
                 <Link href={"#"}>
-                  <a className="font-bold bg-academy lg:px-0 xl:px-0 xl:py-1 rounded-full  sm:text-navbar md:text-navbar sm:ml-4 md:ml-4 flex sm:-mt-3 md:-mt-3 sm:-mb-3 md:-mb-3 sm:bg-gray-200 md:bg-gray-200">
+                  <a className="font-bold bg-academy lg:px-1 lg:py-1 xl:px-1.5 xl:py-1 rounded-full  sm:text-navbar md:text-navbar sm:ml-4 md:ml-4 flex sm:-mt-3 md:-mt-3 sm:-mb-3 md:-mb-3 sm:bg-gray-200 md:bg-gray-200">
                     <p className="sm:ml-4 md:ml-4 sm:w-[93%] md:w-[93%] sm:text-academy md:text-academy"> Sanya Academy </p>
                     <p className=" lg:hidden xl:hidden text-2xl text-navbar "> &gt; </p>
                   </a>
@@ -106,7 +106,7 @@ export default function Navbar({ route }: { route: string }) {
             </ul>
           </div>
           <div className="">
-            <ul className="text-sm sm:text-2xl md:text-2xl flex lg:-mt-2 xl:mt-0 lg:flex-row xl:flex-row xl:space-x-8 lg:space-x-2">
+            <ul className="text-sm sm:text-2xl md:text-2xl flex flex-col-reverse lg:-mt-1 xl:mt-0 lg:flex-row xl:flex-row xl:space-x-8 lg:space-x-2">
               {status == "authenticated" ? (
                 <li className=" inline md:hidden sm:hidden">
                   <UserDropDown
@@ -123,7 +123,7 @@ export default function Navbar({ route }: { route: string }) {
                       menu1="บุคคลทั่วไป"
                       link1="customer/login"
                       menu2="ทนายความ"
-                      link2="#"
+                      link2="lawyer/login"
                       />
                       <div className="lg:hidden xl:hidden">
                         <hr className="h-px ml-2 my-8 bg-gray-300 border-0 w-full "/>
@@ -131,8 +131,8 @@ export default function Navbar({ route }: { route: string }) {
                   </li>
                   <li>
                     <Link href="#">
-                      <a className="flex xl:-mt-1 xl:py-2 lg:py-2 rounded-full text-white hover:text-gray-900 hover:bg-gray-100 md:hover:bg-gray-200 md:hover:text-navbar md:text-navbar sm:hover:bg-gray-200 sm:hover:text-navbar sm:text-navbar">
-                      <UserIcon className="h-5 w-5 text-white inline mr-0.5 md:hidden sm:hidden" />
+                      <a className="flex lg:px-1 xl:px-1.5 xl:py-1 py-2 px-4 rounded-full text-white hover:text-gray-900 hover:bg-gray-100">
+                      <UserIcon className="h-5 w-5 inline mr-0.5 md:hidden sm:hidden" />
                       <p className="sm:ml-8 md:ml-8 sm:w-[90%] md:w-[91.5%] md:-mt-5 sm:-mt-5 -mb-4">ลงทะเบียน</p>
                       <p className=" lg:hidden xl:hidden text-2xl text-navbar -mt-5 -mb-4"> &gt; </p>
                       </a>
@@ -144,7 +144,9 @@ export default function Navbar({ route }: { route: string }) {
                 </>
               )}
               <li className="sm:hidden md:hidden">
-                <MagnifyingGlassIcon className="h-5 w-5 text-white lg:mt-2 xl:mt-1" />
+              <a className="flex lg:px-1 xl:px-1.5 xl:py-1 py-2 px-4 rounded-full text-white hover:text-gray-900 hover:bg-gray-100">
+                  <MagnifyingGlassIcon className="h-5 w-5" />
+                </a>
               </li>
               <li>
                 <Bar3Dropdown

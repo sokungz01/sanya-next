@@ -23,30 +23,33 @@ const Bar3DropDown = ({
   return (
     <>
       <button
-        className="lg:px-0 xl:px-0 xl:py-0 py-2 px-4 rounded-full text-white hover:text-gray-900 hover:bg-gray-100 sm:hidden md:hidden"
+        className="lg:px-1 xl:px-1.5 xl:py-1 py-2 px-4 rounded-full text-white hover:text-gray-900 hover:bg-gray-100 md:hidden sm:hidden"
         onClick={() => setShow(!show)}
       >
-        <Bars3Icon className="h-5 w-5 text-white inline mr-1 -mt-1 xl:mt-1" />
+        <Bars3Icon className="h-5 w-5 inline mr-1 -mt-1 " />
 
       </button>
       {show ? (
         <div className="absolute text-sub right-8 w-24 overflow-hidden bg-white rounded-md shadow-xl ">
+          <Link href={ link1 }>
           <div
             className="flex flex-row items-center px-4 py-3 text-sm  cursor-pointer text-sub  transition-colors duration-200 transform hover:bg-gray-100 "
             onClick={() => setShow(false)}
           >
             <ClipboardDocumentIcon className="h-4 2-4 mr-2" />
-            <Link href={ link1 }>
               <a> {menu1} </a>
-            </Link>
           </div>
+          </Link>
           <hr />
-          <div className="flex flex-row items-center px-4 py-3 text-sm  cursor-pointer text-sub  transition-colors duration-200 transform  hover:bg-gray-100 ">
+          <Link href={ link2 }>
+          <div
+            className="flex flex-row items-center px-4 py-3 text-sm  cursor-pointer text-sub  transition-colors duration-200 transform hover:bg-gray-100 "
+            onClick={() => setShow(false)}
+          >
             <Cog8ToothIcon className="h-4 2-4 mr-2" />
-            <Link href={ link2 }>
               <a> {menu2} </a>
-            </Link>
           </div>
+          </Link>
         </div>
       ) : null}
        <div className="lg:hidden xl:hidden">

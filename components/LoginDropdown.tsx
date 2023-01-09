@@ -24,31 +24,34 @@ const LoginDropDown = ({
   return (
     <>
       <button
-        className="lg:px-0 xl:px-0 xl:py-1 py-2 px-4 rounded-full text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white md:hidden sm:hidden"
+        className="lg:px-1 xl:px-1.5 xl:py-1 py-2 px-4 rounded-full text-white hover:text-gray-900 hover:bg-gray-100 md:hidden sm:hidden"
         onClick={() => setShow(!show)}
       >
-        <LockClosedIcon className="h-5 w-5 text-white inline mr-1 -mt-1" />
+        <LockClosedIcon className="h-5 w-5 inline mr-1 -mt-1 " />
         <span>{name}</span>
 
       </button>
       {show ? (
-        <div className="absolute text-sub right-72 w-32 overflow-hidden bg-white rounded-md shadow-xl ">
+        <div className="absolute text-sub right-72 w-32 lg:right-48 overflow-hidden bg-white rounded-md shadow-xl ">
+          <Link href={ link1 }>
           <div
             className="flex flex-row items-center px-4 py-3 text-sm  cursor-pointer text-sub  transition-colors duration-200 transform hover:bg-gray-100 "
             onClick={() => setShow(false)}
           >
-            <UserIcon className="h-4 2-4 mr-2" />
-            <Link href={ link1 }>
+            <UserIcon className="h-4 w-4 mr-2" />
               <a> {menu1} </a>
-            </Link>
           </div>
+          </Link>
           <hr />
-          <div className="flex flex-row items-center px-4 py-3 text-sm  cursor-pointer text-sub  transition-colors duration-200 transform  hover:bg-gray-100 ">
-            <UserIcon className="h-4 2-4 mr-2" />
-            <Link href={ link2 }>
+          <Link href={ link2 }>
+          <div
+            className="flex flex-row items-center px-4 py-3 text-sm  cursor-pointer text-sub  transition-colors duration-200 transform hover:bg-gray-100 "
+            onClick={() => setShow(false)}
+          >
+            <UserIcon className="h-4 w-4 mr-2" />
               <a> {menu2} </a>
-            </Link>
           </div>
+          </Link>
         </div>
       ) : null}
       <div className="lg:hidden xl:hidden">

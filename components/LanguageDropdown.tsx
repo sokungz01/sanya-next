@@ -14,10 +14,10 @@ const LanguageDropDown = ({
   return (
     <>
       <button
-        className="text-navbar flex bg-white text-xs rounded-lg pl-1 pr-1 pt-2 pb-2 -mt-1 sm:hidden md:hidden"
+        className="text-navbar flex lg:px-1 xl:px-1.5 xl:py-1 bg-white text-xs rounded-lg pl-1 pr-1 pt-2 pb-2 xl:-mt-2 lg:-mt-1 sm:hidden md:hidden"
         onClick={() => setShow(!show)}
       >
-        <p className="px-2 py-0.5">{name}</p>
+        <p className="xl:p-2 lg:py-1 lg:px-2">{name}</p>
       </button>
       {show ? (
         <div className="absolute text-sub right-4 w-12 overflow-hidden bg-white rounded-md shadow-xl ">
@@ -28,7 +28,10 @@ const LanguageDropDown = ({
             <a> {menu1} </a>
           </div>
           <hr />
-          <div className="flex flex-row items-center px-4 py-3 text-sm  cursor-pointer text-sub  transition-colors duration-200 transform  hover:bg-gray-100 ">
+          <div
+            className="flex flex-row items-center px-4 py-3 text-sm  cursor-pointer text-sub  transition-colors duration-200 transform hover:bg-gray-100 "
+            onClick={() => setShow(false)}
+          >
             <a> {menu2} </a>
           </div>
         </div>
